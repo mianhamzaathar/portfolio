@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD HAMZA ATHAR | Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #3b82f6;
+            --accent-blue: #60a5fa;
+            --dark-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --gradient: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+            --gradient-light: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #25b30f;
+            min-height: 100vh;
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background Patterns */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, hwb(120 85% 12%) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(96, 250, 134, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        /* Floating Shapes Animation */
+        .floating-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(96, 165, 250, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 50%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 75%;
+            animation-delay: -7s;
+        }
+
+        .shape:nth-child(5) {
+            width: 90px;
+            height: 90px;
+            top: 80%;
+            left: 10%;
+            animation-delay: -12s;
+        }
+
+        .shape:nth-child(6) {
+            width: 70px;
+            height: 70px;
+            top: 30%;
+            left: 85%;
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(0, 100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-100px, 50px) rotate(270deg);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 100px 0 60px;
+            position: relative;
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 40px;
+        }
+
+        .profile-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.1));
+            border-radius: 50%;
+            animation: pulse 4s infinite;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(96, 165, 250, 0.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        .profile-image {
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(30, 175, 54, 0.2);
+            border: 5px solid rgba(59, 246, 106, 0.5);
+            background-color: white;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tech-item {
+            background: rgba(59, 130, 246, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            color: white;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.1);
+        }
+
+        .tech-item:hover {
+            background: rgba(59, 130, 246, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.2);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            padding: 25px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(219, 234, 254, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgb(242, 242, 244);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1e293b;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Info Sections */
+        .info-section {
+            margin-bottom: 60px;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+            border: 1px solid rgba(219, 234, 254, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15);
+        }
+
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .info-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .info-date {
+            font-size: 1.1rem;
+            color: #64748b;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .info-description {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .info-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .info-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skill-item {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .skill-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .skill-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* AI Features */
+        .ai-feature {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(219, 234, 254, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+        }
+
+        .ai-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .ai-feature:hover::before {
+            opacity: 1;
+        }
+
+        .ai-feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15);
+        }
+
+        .ai-feature > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .ai-feature h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .ai-feature p {
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Contact Cards */
+        .contact-card {
+            text-align: center;
+            padding: 45px 35px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            border: 1px solid rgba(219, 234, 254, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(30, 64, 175, 0.15);
+        }
+
+        .contact-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-info h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info p {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 25px;
+        }
+
+        /* LinkedIn Special Card */
+        .linkedin-card {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+            color: white;
+        }
+
+        .linkedin-card::before {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .linkedin-card .contact-icon {
+            background: white;
+            color: #0077b5;
+            box-shadow: 0 10px 20px rgba(0, 119, 181, 0.3);
+        }
+
+        .linkedin-card .contact-info h3 {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .linkedin-card .contact-info p {
+            color: white;
+        }
+
+        .linkedin-card .btn {
+            background: white;
+            color: #00b536;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .linkedin-card .btn:hover {
+            background: #f0f0f0;
+            box-shadow: 0 12px 25px rgba(255, 255, 255, 0.4);
+        }
+
+        /* AI Chatbot */
+        .ai-chat-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .chat-toggle {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chat-toggle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            animation: pulse 2s infinite;
+            border-radius: 50%;
+        }
+
+        .chat-toggle i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .chat-window {
+            width: 420px;
+            height: 580px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(30, 64, 175, 0.25);
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(219, 234, 254, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .chat-window.active {
+            display: flex;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-header {
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: rgba(248, 249, 250, 0.8);
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 18px 22px;
+            border-radius: 25px;
+            font-size: 1rem;
+            line-height: 1.5;
+            position: relative;
+            animation: messageAppear 0.3s ease;
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bot-message {
+            background: white;
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 8px;
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.05);
+        }
+
+        .user-message {
+            background: var(--gradient);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .chat-input {
+            padding: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 15px;
+            background: white;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 18px 22px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            font-size: 1.05rem;
+            background: #f8f9fa;
+            color: #1e293b;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input input:focus {
+            border-color: var(--primary-blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            margin-top: 80px;
+            color: white;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: rgba(96, 165, 250, 0.5);
+            border-radius: 2px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        .social-link:hover {
+            background: white;
+            color: var(--primary-blue);
+            transform: translateY(-8px) rotate(15deg);
+            box-shadow: 0 15px 30px rgba(30, 64, 175, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .name {
+                font-size: 3rem;
+            }
+            
+            .title {
+                font-size: 1.4rem;
+            }
+            
+            .chat-window {
+                width: 380px;
+                height: 550px;
+                right: -10px;
+            }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .profile-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .profile-image {
+                width: 170px;
+                height: 170px;
+            }
+            
+            .chat-window {
+                width: 350px;
+                right: -20px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .card {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-window {
+                width: 320px;
+                right: -40px;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .ai-chat-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-toggle {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+            
+            .profile-container {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-container">
+                    <div class="profile-bg"></div>
+                    <div class="profile-image">
+                        <!-- Replace this with your actual image URL -->
+                       <img src="WhatsApp Image 2026-01-14 at 1.37.21 PM.jpeg">
+ alt="Muhammad Hamza Athar" id="profilePicture">
+                    </div>
+                </div>
+                <h1 class="name">MUHAMMAD HAMZA ATHAR</h1>
+                <p class="title">Full-Stack Web Developer</p>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">Python</div>
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">Django</div>
+                    <div class="tech-item">Node.js</div>
+                    <div class="tech-item">AI Integration</div>
+                    <div class="tech-item">JavaScript</div>
+                    <div class="tech-item">TypeScript</div>
+                    <div class="tech-item">MongoDB</div>
+                </div>
+                
+                <p class="tagline">Creating beautiful, functional web solutions with passion and precision. Specializing in Full Stack Web Development, AI Integration, and modern web technologies.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Education Section -->
+        <section class="card">
+            <h2 class="section-title">🎓 Education</h2>
+            <div class="info-section">
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">University of Wah, Wah Cantt</h3>
+                            <p class="info-subtitle">Bachelors in Computer Science</p>
+                        </div>
+                        <span class="info-date">August 2021 - July 2025</span>
+                    </div>
+                    <p class="info-description">CGPA: 2.41</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="card">
+            <h2 class="section-title">💼 Professional Experience</h2>
+            <div class="info-section">
+                <!-- Experience 1 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">Frontend Development Intern</h3>
+                            <p class="info-subtitle">CodeAlpha</p>
+                        </div>
+                        <span class="info-date">June 2025 - Present</span>
+                    </div>
+                    <ul class="info-list">
+                        <li>Developed multiple responsive web design projects using HTML, CSS, JavaScript, and React.js</li>
+                        <li>Ensured cross-browser compatibility and optimal user experience</li>
+                        <li>Gained hands-on experience in user interface design and modern component-based architecture</li>
+                        <li>Focused on creating intuitive and accessible interfaces that work seamlessly across devices</li>
+                        <li>Applied frontend development standards and modern web technologies to deliver professional-grade projects</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">Web Development Intern</h3>
+                            <p class="info-subtitle">Digital Empowerment Network</p>
+                        </div>
+                        <span class="info-date">September 2024 - October 2024 (Remote)</span>
+                    </div>
+                    <ul class="info-list">
+                        <li>Successfully completed a comprehensive virtual internship program in Web Development with exceptional performance</li>
+                        <li>Worked on end-to-end web development projects, gaining exposure to both frontend and backend technologies</li>
+                        <li>Demonstrated ability to work effectively in a remote team environment, meeting deadlines and delivering quality work</li>
+                        <li>Enhanced proficiency in modern web development frameworks and industry-standard practices</li>
+                    </ul>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">C++ Development Trainee</h3>
+                            <p class="info-subtitle">Cybronics Academy</p>
+                        </div>
+                        <span class="info-date">March 2022 - May 2022 (Onsite)</span>
+                    </div>
+                    <ul class="info-list">
+                        <li>Focused on implementing efficient algorithms and developing real-world applications using C++</li>
+                        <li>Gained hands-on experience in software development and advanced problem-solving techniques</li>
+                        <li>Worked on building practical software solutions with emphasis on performance optimization</li>
+                        <li>Strengthened core programming concepts and object-oriented programming principles</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="card">
+            <h2 class="section-title">🛠️ Technical Skills</h2>
+            <div class="grid-3">
+                <div class="skill-item">
+                    <h3>Frontend</h3>
+                    <p>React.js, Next.js, JavaScript, TypeScript, HTML, CSS, Tailwind, Bootstrap</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Backend</h3>
+                    <p>Node.js, Express.js, Django, Python, REST APIs</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Databases</h3>
+                    <p>MongoDB, SQLite3, Database Design</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Tools & DevOps</h3>
+                    <p>Git, GitHub, Version Control, Deployment</p>
+                </div>
+                <div class="skill-item">
+                    <h3>AI & Machine Learning</h3>
+                    <p>AI Integration, Google Gemini API, DeepSeek API</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Soft Skills</h3>
+                    <p>Team Leadership, Problem Solving, Communication, Adaptability</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="card">
+            <h2 class="section-title">🚀 Featured Projects</h2>
+            <div class="info-section">
+                <!-- Project 1 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">AI-Assisted Journal Reviewer System</h3>
+                            <p class="info-subtitle">Final Year Project</p>
+                        </div>
+                        <a href="https://github.com/mianhamzaathar/A-Assisted-Journal-Review" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                    <p class="info-description">An AI-powered automation tool designed to streamline the research paper review process by providing early-stage quality assessments.</p>
+                    <ul class="info-list">
+                        <li>Built an intelligent system to assess research paper quality, relevance, and originality using machine learning algorithms</li>
+                        <li>Integrated plagiarism checking capabilities to ensure manuscript authenticity and academic integrity</li>
+                        <li>Developed features to provide editors with actionable insights and recommendations, improving review consistency</li>
+                        <li>Significantly reduced manual review time while maintaining high standards of academic evaluation</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">PicNest (Pinterest Clone)</h3>
+                            <p class="info-subtitle">Django, Python, Google Gemini API</p>
+                        </div>
+                        <a href="https://github.com/mianhamzaathar/PicNest" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                    <p class="info-description">A Pinterest-style photo-sharing platform built with Django, Python, Bootstrap, JavaScript, and SQLite3, featuring AI-powered image generation using the Google Gemini API.</p>
+                    <ul class="info-list">
+                        <li>Used Gemini API to create and save AI-generated images as new pins</li>
+                        <li>Added profile bio, photo, and website link options for public profiles</li>
+                        <li>Create, edit, and organize pins into public or private boards</li>
+                        <li>Enabled following users and adding comments to pins</li>
+                        <li>Designed a clean, Pinterest-like interface using Bootstrap and JavaScript</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">InvestHub — Django, JazzCash/EasyPaisa Integration</h3>
+                            <p class="info-subtitle">Earning and Investment Platform</p>
+                        </div>
+                        <a href="https://github.com/mianhamzaathar/investhub" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                    <p class="info-description">A comprehensive earning and investment platform enabling users to activate and manage daily earning plans through integrated payment systems.</p>
+                    <ul class="info-list">
+                        <li>Implemented seamless JazzCash and EasyPaisa payment gateways with OTP-based verification for secure transactions</li>
+                        <li>Developed a robust digital wallet system for managing user funds, withdrawals, and earnings tracking</li>
+                        <li>Built automated plan activation, upgrade functionality, and expiration tracking to enhance user experience</li>
+                        <li>Created an intuitive Bootstrap 5-based dashboard UI for easy navigation and account management</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="info-item">
+                    <div class="info-header">
+                        <div>
+                            <h3 class="info-title">College Chatbot Website</h3>
+                            <p class="info-subtitle">Django, DeepSeek AI</p>
+                        </div>
+                        <a href="https://github.com/mianhamzaathar/College-Chatbot" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                    <p class="info-description">A full-stack college management platform featuring a context-aware AI chatbot for automated student inquiries and instant information dissemination.</p>
+                    <ul class="info-list">
+                        <li>Developed and deployed a custom DeepSeek-powered Python logic for intelligent, context-aware automated responses to student queries</li>
+                        <li>Built complete sections including Home, About Us, Admissions, Fee Structure, Library, Careers, Gallery, Events, and Contact Us</li>
+                        <li>Leveraged Django's admin panel for easy content updates and system management</li>
+                        <li>Designed an intuitive interface that provides instant information access to students and visitors</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="card">
+            <h2 class="section-title">🏆 Achievements & Certifications</h2>
+            <div class="grid-3">
+                <div class="skill-item">
+                    <h3>Web Development Certification</h3>
+                    <p>Digital Empowerment Network</p>
+                </div>
+                <div class="skill-item">
+                    <h3>C++ Certification</h3>
+                    <p>Cybronics Academy</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Frontend Development Certification</h3>
+                    <p>CodeAlpha</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Web Development Quiz</h3>
+                    <p>CodeAlpha (Score: 64/70)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Features Section -->
+        <section class="card">
+            <h2 class="section-title">✨ AI-Powered Features</h2>
+            <p style="margin-bottom: 40px; color: #64748b; font-size: 1.2rem; line-height: 1.6;">
+                Experience interactive portfolio features powered by artificial intelligence. 
+                Get instant responses, code analysis, and personalized project recommendations.
+            </p>
+            
+            <div class="grid">
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Assistant</h3>
+                    <p>Chat with our intelligent assistant that can answer questions about skills, experience, 
+                       projects, and availability in real-time.</p>
+                    <button class="btn" id="openChatBtn">
+                        <i class="fas fa-comment"></i> Start Conversation
+                    </button>
+                </div>
+                
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Analysis</h3>
+                    <p>Submit your code for intelligent analysis. Get optimization suggestions, 
+                       best practices, and improvement recommendations instantly.</p>
+                    <button class="btn" id="codeAnalysisBtn">
+                        <i class="fas fa-search"></i> Analyze Code
+                    </button>
+                </div>
+                
+                <div class="ai-feature">
+                    <div class="ai-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Project Ideas</h3>
+                    <p>Receive personalized project recommendations and technology stack 
+                       suggestions tailored to your interests and goals.</p>
+                    <button class="btn" id="projectRecommendBtn">
+                        <i class="fas fa-rocket"></i> Get Inspired
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="card">
+            <h2 class="section-title">📱 Let's Connect</h2>
+            <p style="margin-bottom: 40px; color: #64748b; font-size: 1.2rem; line-height: 1.6;">
+                Ready to collaborate on your next project? Choose your preferred way to get in touch. 
+                I typically respond within 24 hours.
+            </p>
+            
+            <div class="grid-2">
+                <!-- Phone -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>PHONE NUMBER</h3>
+                        <p>+92 317 1717083</p>
+                    </div>
+                    <button class="btn" id="callNowBtn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </button>
+                </div>
+                
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>EMAIL ADDRESS</h3>
+                        <p>jarrysultan@gmail.com</p>
+                    </div>
+                    <button class="btn" id="sendEmailBtn">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="contact-card linkedin-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>LINKEDIN PROFILE</h3>
+                        <p>linkedin.com/in/webifyhamza</p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/webifyhamza" target="_blank" class="btn">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                </div>
+                
+                <!-- WhatsApp -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h3>WHATSAPP</h3>
+                        <p>+92 317 1717083</p>
+                    </div>
+                    <a href="https://wa.me/923171717083" target="_blank" class="btn">
+                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Chatbot -->
+    <div class="ai-chat-container">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                <button class="btn btn-outline" id="closeChatBtn" style="padding: 10px 18px; color: white; border-color: white;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    👋 Hello! I'm your AI assistant. I can help you learn about Muhammad's skills, experience, and projects. 
+                    What would you like to know today?
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button class="btn" id="sendButton" style="padding: 15px 25px;">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="font-size: 2.5rem; margin-bottom: 25px; opacity: 0.9;">
+                <i class="fas fa-code-branch"></i>
+            </div>
+            <p style="font-size: 1.4rem; margin-bottom: 15px; font-weight: 600;">
+                Muhammad Hamza Athar
+            </p>
+            <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9; font-size: 1.1rem;">
+                Full-Stack Web Developer specializing in creating beautiful, functional web solutions with modern technologies. 
+                Skilled in Python, Django, React, Node.js, and AI Integration.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/webifyhamza" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:jarrysultan@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/mianhamzaathar" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://wa.me/923171717083" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <p style="margin-top: 50px; font-size: 1rem; opacity: 0.8; letter-spacing: 1px;">
+                &copy; 2025 Muhammad Hamza Athar. Crafted with ❤️ and passion
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced AI Knowledge Base with resume data
+        const aiKnowledgeBase = {
+            education: "🎓 Bachelors in Computer Science from University of Wah, Wah Cantt (August 2021 - July 2025) with CGPA: 2.41",
+            
+            experience: {
+                codealpha: "💼 Frontend Development Intern at CodeAlpha (June 2025 - Present): Developed responsive web projects using HTML, CSS, JavaScript, and React.js with focus on cross-browser compatibility and modern component-based architecture.",
+                digitalEmpowerment: "💼 Web Development Intern at Digital Empowerment Network (September 2024 - October 2024): Completed comprehensive virtual internship program, worked on full-stack projects, and enhanced proficiency in modern web development frameworks.",
+                cybronics: "💼 C++ Development Trainee at Cybronics Academy (March 2022 - May 2022): Implemented efficient algorithms, developed real-world applications, and strengthened core programming concepts."
+            },
+            
+            skills: {
+                frontend: "🛠️ Frontend: React.js, Next.js, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS, Bootstrap",
+                backend: "🛠️ Backend: Node.js, Express.js, Django, Python, RESTful APIs",
+                databases: "🗄️ Databases: MongoDB, SQLite3",
+                ai: "🤖 AI Integration: Google Gemini API, DeepSeek API, AI-powered applications",
+                tools: "🔧 Tools: Git, GitHub, Version Control",
+                soft: "🌟 Soft Skills: Team Leadership, Problem Solving, Communication, Adaptability"
+            },
+            
+            projects: {
+                journalReviewer: "📚 AI-Assisted Journal Reviewer System: Final year project using AI to streamline research paper review process with plagiarism detection and quality assessment.",
+                picnest: "📷 PicNest (Pinterest Clone): Django-based photo-sharing platform with AI image generation using Google Gemini API.",
+                investhub: "💰 InvestHub: Earning and investment platform with JazzCash/EasyPaisa payment integration and digital wallet system.",
+                chatbot: "🤖 College Chatbot Website: Django platform with DeepSeek-powered AI chatbot for student inquiries.",
+                irrigation: "🌱 Irrigation Management System: Web-based agricultural automation platform for intelligent irrigation scheduling.",
+                restaurant: "🍽️ Restaurant Management System: Laravel and Vue.js platform for menu operations and order processing.",
+                cryptocurrency: "₿ Cryptocurrency Website: Real-time crypto tracking platform with API integration.",
+                portfolio: "🎨 Portfolio Website: Professional portfolio built with PHP, Bootstrap, and JavaScript"
+            },
+            
+            contact: {
+                phone: "📞 Phone: +92 317 1717083",
+                email: "📧 Email: jarrysultan@gmail.com",
+                linkedin: "💼 LinkedIn: linkedin.com/in/webifyhamza",
+                whatsapp: "💬 WhatsApp: +92 317 1717083",
+                github: "👨‍💻 GitHub: github.com/mianhamzaathar",
+                response: "⏰ Typical response time: Within 24 hours"
+            },
+            
+            achievements: "🏆 Achievements: Web Development Certification (Digital Empowerment Network), C++ Certification (Cybronics Academy), Frontend Development Certification (CodeAlpha), Web Development Quiz (CodeAlpha - Score: 64/70)"
+        };
+
+        // DOM Elements
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChatBtn = document.getElementById('closeChatBtn');
+        const sendButton = document.getElementById('sendButton');
+        const userInput = document.getElementById('userInput');
+        const chatMessages = document.getElementById('chatMessages');
+        const openChatBtn = document.getElementById('openChatBtn');
+        const codeAnalysisBtn = document.getElementById('codeAnalysisBtn');
+        const projectRecommendBtn = document.getElementById('projectRecommendBtn');
+        const profilePicture = document.getElementById('profilePicture');
+        const callNowBtn = document.getElementById('callNowBtn');
+        const sendEmailBtn = document.getElementById('sendEmailBtn');
+
+        // Function to upload and display profile picture
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profilePicture.src = e.target.result;
+                    localStorage.setItem('profileImage', e.target.result);
+                    showNotification("✅ Profile picture updated successfully!", "success");
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Load saved profile picture from localStorage
+        function loadProfilePicture() {
+            const savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                profilePicture.src = savedImage;
+            } else {
+                // Default image placeholder - replace with your actual image URL
+                profilePicture.src = "https://via.placeholder.com/210x210/3b82f6/ffffff?text=H";
+                
+                // Make profile picture clickable for upload
+                profilePicture.style.cursor = 'pointer';
+                profilePicture.title = 'Click to upload profile picture';
+                profilePicture.addEventListener('click', () => {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.onchange = handleImageUpload;
+                    input.click();
+                });
+            }
+        }
+
+        // Contact Functions - UPDATED
+        callNowBtn.addEventListener('click', function() {
+            // Remove any spaces or special characters from phone number
+            const phoneNumber = '+923171717083'; // Your number without spaces
+            const telLink = `tel:${phoneNumber}`;
+            
+            // Try to open the phone dialer
+            window.location.href = telLink;
+            
+            // Show notification
+            showNotification("📱 Opening phone dialer with your number...", "info");
+        });
+
+        sendEmailBtn.addEventListener('click', function() {
+            const emailAddress = 'jarrysultan@gmail.com';
+            const subject = 'Regarding Portfolio Inquiry';
+            const body = 'Hello Muhammad Hamza,\n\nI saw your portfolio and would like to discuss...\n\nBest regards,';
+            
+            // Create mailto link with subject and body
+            const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show notification
+            showNotification("📧 Opening email client with your address...", "info");
+        });
+
+        // Chatbot Functions
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('active');
+            if (chatWindow.classList.contains('active')) {
+                userInput.focus();
+            }
+        });
+
+        closeChatBtn.addEventListener('click', () => chatWindow.classList.remove('active'));
+        openChatBtn.addEventListener('click', () => {
+            chatWindow.classList.add('active');
+            userInput.focus();
+        });
+
+        // Send Message Function
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessageToChat(message, 'user');
+            userInput.value = '';
+
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot-message';
+            typingDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 10px; height: 10px; background: #3b82f6; border-radius: 50%; animation: typing 1s infinite;"></div>
+                    <div style="width: 10px; height: 10px; background: #3b82f6; border-radius: 50%; animation: typing 1s infinite 0.2s;"></div>
+                    <div style="width: 10px; height: 10px; background: #3b82f6; border-radius: 50%; animation: typing 1s infinite 0.4s;"></div>
+                    <span style="color: #64748b; font-size: 0.9rem;">AI is typing...</span>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Add typing animation
+            if (!document.querySelector('#typing-animation')) {
+                const style = document.createElement('style');
+                style.id = 'typing-animation';
+                style.textContent = `
+                    @keyframes typing {
+                        0%, 100% { opacity: 0.4; transform: translateY(0); }
+                        50% { opacity: 1; transform: translateY(-4px); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            // Get AI response after delay
+            setTimeout(() => {
+                chatMessages.removeChild(typingDiv);
+                const aiResponse = getAIResponse(message);
+                addMessageToChat(aiResponse, 'bot');
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1200 + Math.random() * 1000);
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function addMessageToChat(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getAIResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Greetings
+            if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                return "Hello! 👋 I'm here to help you learn about Muhammad Hamza Athar's web development skills and experience. What would you like to know?";
+            }
+            
+            // Education
+            if (message.includes('education') || message.includes('degree') || message.includes('university') || message.includes('cgpa')) {
+                return aiKnowledgeBase.education;
+            }
+            
+            // Experience
+            if (message.includes('experience') || message.includes('work') || message.includes('intern') || message.includes('job')) {
+                if (message.includes('codealpha') || message.includes('frontend')) return aiKnowledgeBase.experience.codealpha;
+                if (message.includes('digital') || message.includes('empowerment')) return aiKnowledgeBase.experience.digitalEmpowerment;
+                if (message.includes('cybronics') || message.includes('c++')) return aiKnowledgeBase.experience.cybronics;
+                return `Professional Experience:\n\n1. ${aiKnowledgeBase.experience.codealpha}\n\n2. ${aiKnowledgeBase.experience.digitalEmpowerment}\n\n3. ${aiKnowledgeBase.experience.cybronics}`;
+            }
+            
+            // Skills
+            if (message.includes('skill') || message.includes('tech') || message.includes('technology') || message.includes('programming')) {
+                if (message.includes('frontend')) return aiKnowledgeBase.skills.frontend;
+                if (message.includes('backend')) return aiKnowledgeBase.skills.backend;
+                if (message.includes('database')) return aiKnowledgeBase.skills.databases;
+                if (message.includes('ai') || message.includes('artificial')) return aiKnowledgeBase.skills.ai;
+                if (message.includes('tool') || message.includes('git')) return aiKnowledgeBase.skills.tools;
+                if (message.includes('soft') || message.includes('communication')) return aiKnowledgeBase.skills.soft;
+                return `Technical Skills:\n\n${aiKnowledgeBase.skills.frontend}\n\n${aiKnowledgeBase.skills.backend}\n\n${aiKnowledgeBase.skills.databases}\n\n${aiKnowledgeBase.skills.ai}\n\n${aiKnowledgeBase.skills.tools}\n\n${aiKnowledgeBase.skills.soft}`;
+            }
+            
+            // Projects
+            if (message.includes('project') || message.includes('portfolio') || message.includes('github')) {
+                if (message.includes('journal') || message.includes('reviewer')) return aiKnowledgeBase.projects.journalReviewer;
+                if (message.includes('picnest') || message.includes('pinterest')) return aiKnowledgeBase.projects.picnest;
+                if (message.includes('investhub') || message.includes('investment')) return aiKnowledgeBase.projects.investhub;
+                if (message.includes('chatbot') || message.includes('college')) return aiKnowledgeBase.projects.chatbot;
+                return `Featured Projects:\n\n• ${aiKnowledgeBase.projects.journalReviewer}\n\n• ${aiKnowledgeBase.projects.picnest}\n\n• ${aiKnowledgeBase.projects.investhub}\n\n• ${aiKnowledgeBase.projects.chatbot}\n\n• ${aiKnowledgeBase.projects.irrigation}\n\n• ${aiKnowledgeBase.projects.restaurant}\n\n• ${aiKnowledgeBase.projects.cryptocurrency}\n\n• ${aiKnowledgeBase.projects.portfolio}`;
+            }
+            
+            // Contact
+            if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('call') || message.includes('whatsapp') || message.includes('linkedin') || message.includes('github')) {
+                return `Contact Information:\n\n${aiKnowledgeBase.contact.phone}\n${aiKnowledgeBase.contact.email}\n${aiKnowledgeBase.contact.linkedin}\n${aiKnowledgeBase.contact.whatsapp}\n${aiKnowledgeBase.contact.github}\n\n${aiKnowledgeBase.contact.response}`;
+            }
+            
+            // Achievements
+            if (message.includes('achievement') || message.includes('certification') || message.includes('certificate')) {
+                return aiKnowledgeBase.achievements;
+            }
+            
+            // Availability
+            if (message.includes('available') || message.includes('hire') || message.includes('freelance') || message.includes('opportunity')) {
+                return "Muhammad is currently available for:\n\n✅ Freelance web development projects\n✅ Full-time opportunities\n✅ Collaborative work\n✅ Technical consultation\n✅ Code reviews\n\nYou can contact him directly using any of the contact options above!";
+            }
+            
+            // Help
+            if (message.includes('help') || message.includes('what can you do')) {
+                return "I can help you with:\n\n• Education background\n• Work experience\n• Technical skills\n• Projects portfolio\n• Contact information\n• Achievements & certifications\n• Availability for work\n\nJust ask me anything about Muhammad Hamza Athar!";
+            }
+            
+            // Default response
+            const responses = [
+                "I'd love to help! You can ask about:\n• Education background\n• Work experience\n• Technical skills\n• Project examples\n• Contact information\n• Availability for work",
+                "I can tell you about web development skills, AI integration, Django projects, or how to get in touch with Muhammad.",
+                "Try asking about specific technologies like Python, React, Django, or Node.js. Or ask about project experience and contact details!"
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Feature Buttons
+        codeAnalysisBtn.addEventListener('click', () => {
+            showNotification("🔍 Opening code analysis tool...", "info");
+            chatWindow.classList.add('active');
+            userInput.focus();
+            setTimeout(() => {
+                addMessageToChat("Sure! I can help analyze your code. You can paste your code snippet here, and I'll provide suggestions for optimization, best practices, and improvements.\n\nWhat programming language is your code in?", 'bot');
+            }, 800);
+        });
+
+        projectRecommendBtn.addEventListener('click', () => {
+            showNotification("💡 Loading project ideas...", "info");
+            chatWindow.classList.add('active');
+            userInput.focus();
+            setTimeout(() => {
+                addMessageToChat("Here are some exciting project ideas for modern web development:", 'bot');
+                const projects = [
+                    "🎯 E-commerce Platform: React frontend with Django REST API and payment integration",
+                    "🚀 Real-time Dashboard: Node.js with Socket.io for live data visualization",
+                    "📊 Analytics Tool: Python data processing with React visualization and MongoDB",
+                    "🤖 AI Chat Assistant: Django backend with React frontend and OpenAI/DeepSeek API",
+                    "📱 PWA Portfolio: Progressive Web App with offline capabilities and push notifications",
+                    "🔗 API Gateway: Microservices architecture with multiple API integrations",
+                    "🎨 Design System: Reusable React components with Storybook and TypeScript",
+                    "⚡ Performance Monitor: Real-time website performance tracking with analytics"
+                ];
+                addMessageToChat(projects.join('\n\n'), 'bot');
+                addMessageToChat("\nWhich type of project interests you the most? I can provide more specific details!", 'bot');
+            }, 800);
+        });
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 30px;
+                right: 30px;
+                background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #34d399)' : 
+                           type === 'error' ? 'linear-gradient(135deg, #ef4444, #dc2626)' : 
+                           'linear-gradient(135deg, #3b82f6, #2563eb)'};
+                color: white;
+                padding: 18px 28px;
+                border-radius: 20px;
+                box-shadow: 0 15px 35px rgba(30, 64, 175, 0.25);
+                z-index: 1000;
+                font-weight: 500;
+                animation: slideInRight 0.4s ease;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                max-width: 400px;
+                font-size: 1.05rem;
+            `;
+            
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.4s ease';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 400);
+            }, 3000);
+            
+            // Add animation styles if not present
+            if (!document.querySelector('#notification-animations')) {
+                const style = document.createElement('style');
+                style.id = 'notification-animations';
+                style.textContent = `
+                    @keyframes slideInRight {
+                        from {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes slideOutRight {
+                        from {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                        to {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Initialize animations on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load profile picture
+            loadProfilePicture();
+            
+            // Animate elements on load
+            const animateElements = document.querySelectorAll('.ai-feature, .contact-card, .card, .info-item, .skill-item');
+            animateElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 200 + index * 150);
+            });
+
+            // Add floating shapes dynamically
+            function createFloatingShapes() {
+                const shapesContainer = document.querySelector('.floating-shapes');
+                for (let i = 0; i < 12; i++) {
+                    const shape = document.createElement('div');
+                    shape.className = 'shape';
+                    shape.style.width = `${40 + Math.random() * 120}px`;
+                    shape.style.height = shape.style.width;
+                    shape.style.top = `${Math.random() * 100}%`;
+                    shape.style.left = `${Math.random() * 100}%`;
+                    shape.style.background = `rgba(59, 130, 246, ${0.05 + Math.random() * 0.15})`;
+                    shape.style.animationDelay = `${Math.random() * -20}s`;
+                    shape.style.animationDuration = `${20 + Math.random() * 25}s`;
+                    shapesContainer.appendChild(shape);
+                }
+            }
+
+            // Initialize shapes
+            createFloatingShapes();
+
+            // Welcome message in chat
+            setTimeout(() => {
+                const welcomeMessage = "👋 Welcome to Muhammad Hamza Athar's portfolio! I'm your AI assistant here to help you learn about his skills, experience, projects, and more. Feel free to ask anything!";
+                if (!chatWindow.classList.contains('active')) {
+                    addMessageToChat(welcomeMessage, 'bot');
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
